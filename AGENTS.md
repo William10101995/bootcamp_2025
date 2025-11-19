@@ -212,6 +212,14 @@ Then add detailed text below explaining conditional logic, system-specific instr
 - Include comments in Spanish when helpful
 - Show practical, runnable examples
 - Demonstrate both correct (✅) and incorrect (❌) patterns when relevant
+- Starting with the `Sintaxis y estructura básica` section, include multiple
+  additional code blocks and, when applicable, terminal commands that reinforce
+  each concept (e.g., script execution, linting tools, environment managers).
+- Whenever you introduce a new structure (classes, functions, packages, environments),
+  add a usage example plus the terminal command needed to run or verify it.
+- All code snippets (including comments, string literals, identifiers, and outputs)
+  must be written in English exclusively and should never include emojis; the surrounding
+  explanatory text in the document must remain in Spanish.
 
 ### Section Organization
 

@@ -341,39 +341,39 @@ sequenceDiagram
 **REPL/Shell:**
 
 ```bash
-# Iniciar Python shell
+# Start Python shell
 python
->>> print("Hola Mundo")
+>>> print("Hello World")
 >>> exit()
 
-# IPython (más features)
+# IPython (more features)
 ipython
 ```
 
 **Ejecutar Scripts:**
 
 ```bash
-# Ejecución básica
-python mi_script.py
+# Basic execution
+python my_script.py
 
-# Con argumentos
-python mi_script.py arg1 arg2
+# With arguments
+python my_script.py arg1 arg2
 
-# Script ejecutable (Unix/Linux)
-chmod +x mi_script.py
-./mi_script.py
+# Executable script (Unix/Linux)
+chmod +x my_script.py
+./my_script.py
 ```
 
 **Jupyter:**
 
 ```bash
-# Instalar
+# Install
 pip install jupyter
 
-# Iniciar servidor
+# Start server
 jupyter notebook
 
-# O JupyterLab
+# Or JupyterLab
 jupyter lab
 ```
 
@@ -413,6 +413,30 @@ flowchart LR
 
 </div>
 
+**Ejemplo práctico con indentación, comentarios y operadores:**
+
+```python
+# file: fundamentals.py
+
+# Single-line comment
+message = "Hello Bootcamp"  # snake_case variable
+
+def greet(name: str) -> str:
+    """Docstring that describes the function."""
+    result = f"{message}, {name}"
+    if len(name) > 5:
+        result += " (long name)"
+    return result.upper()
+
+print(greet("Team"))
+print(3 + 5 * 2)  # Arithmetic operators
+```
+
+```bash
+# Run the file and check the output
+python fundamentals.py
+```
+
 ### Estructura de un Programa Python
 
 <div style="background-color: black; border-radius: 10px; padding: 20px; margin: 20px 0;">
@@ -436,6 +460,32 @@ flowchart TD
 ```
 
 </div>
+
+**Plantilla mínima de script y ejecución:**
+
+```python
+# file: base_structure.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Basic structure example."""
+
+import pathlib
+
+VERSION = "1.0.0"
+
+def main() -> None:
+    current_path = pathlib.Path(__file__).parent
+    print(f"Version: {VERSION}")
+    print(f"Running from: {current_path}")
+
+if __name__ == "__main__":
+    main()
+```
+
+```bash
+chmod +x base_structure.py   # Optional on Unix
+./base_structure.py          # or python base_structure.py
+```
 
 ### Tipos de Datos Básicos
 
@@ -469,6 +519,27 @@ graph LR
 
 </div>
 
+**Inspección rápida de tipos en REPL e impresión formateada:**
+
+```python
+# file: types_demo.py
+collection = {
+    "number": 42,
+    "pi": 3.1415,
+    "text": "Hello",
+    "list": [1, 2, 3],
+    "set": {"python", "bootcamp"},
+    "dictionary": {"course": "DevLights", "level": "Beginner"},
+}
+
+for name, value in collection.items():
+    print(f"{name:<12} -> {type(value).__name__} = {value}")
+```
+
+```bash
+python -i types_demo.py  # Keep interactive mode to continue testing
+```
+
 ### Estructuras de Control
 
 <div style="background-color: black; border-radius: 10px; padding: 20px; margin: 20px 0;">
@@ -496,62 +567,84 @@ graph LR
 
 </div>
 
+**Control de flujo en acción:**
+
+```python
+# file: control_flow.py
+from random import randint
+
+def evaluate_number():
+    number = randint(1, 10)
+    message = "Even number" if number % 2 == 0 else "Odd number"
+    print(f"Generated number: {number} -> {message}")
+
+for _ in range(3):
+    evaluate_number()
+else:
+    print("Loop finished without break.")
+```
+
+```bash
+python control_flow.py
+```
+
 ### Ejemplo de Sintaxis Completa
 
 ```python
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Módulo de ejemplo mostrando sintaxis básica de Python.
-"""
+"""Example module showing basic Python syntax."""
 
 # Imports
-from typing import List, Optional
-import math
+from typing import List
 
-# Constante global
+# Global constant
 PI = 3.14159
 
-class Calculadora:
-    """Clase ejemplo con operaciones básicas."""
+class Calculator:
+    """Example class with basic operations."""
 
-    def __init__(self, nombre: str):
-        self.nombre = nombre
-        self.historial: List[float] = []
+    def __init__(self, name: str):
+        self.name = name
+        self.history: List[float] = []
 
-    def sumar(self, a: float, b: float) -> float:
-        """Suma dos números."""
-        resultado = a + b
-        self.historial.append(resultado)
-        return resultado
+    def add(self, a: float, b: float) -> float:
+        """Add two numbers."""
+        result = a + b
+        self.history.append(result)
+        return result
 
-    def area_circulo(self, radio: float) -> float:
-        """Calcula el área de un círculo."""
-        return PI * radio ** 2
+    def circle_area(self, radius: float) -> float:
+        """Calculate the area of a circle."""
+        return PI * radius ** 2
 
 def main():
-    """Función principal."""
-    # Crear instancia
-    calc = Calculadora("MiCalc")
+    """Main function."""
+    # Create instance
+    calc = Calculator("MyCalc")
 
-    # Operaciones
-    suma = calc.sumar(5, 3)
-    area = calc.area_circulo(10)
+    # Operations
+    sum_result = calc.add(5, 3)
+    area = calc.circle_area(10)
 
-    # Condicional
-    if suma > 5:
-        print(f"La suma {suma} es mayor que 5")
+    # Conditional
+    if sum_result > 5:
+        print(f"The sum {sum_result} is greater than 5")
 
-    # Bucle for
+    # For loop
     for i in range(3):
-        print(f"Iteración {i}")
+        print(f"Iteration {i}")
 
     # List comprehension
-    cuadrados = [x**2 for x in range(5)]
-    print(cuadrados)
+    squares = [x**2 for x in range(5)]
+    print(squares)
 
 if __name__ == "__main__":
     main()
+```
+
+```bash
+python syntax_example.py
 ```
 
 ### Convenciones de Estilo (PEP 8)
@@ -581,6 +674,23 @@ graph LR
 ```
 
 </div>
+
+**Comparación rápido ✅/❌ y chequeo con linters:**
+
+```python
+# Correct example
+def calculate_total(unit_price: float, quantity: int) -> float:
+    return unit_price * quantity
+
+# Incorrect example (confusing names, no spaces)
+def ct(p,c):
+    return p*c
+```
+
+```bash
+pip install ruff --quiet
+ruff check base_structure.py control_flow.py syntax_example.py
+```
 
 ---
 
