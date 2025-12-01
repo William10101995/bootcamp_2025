@@ -1,22 +1,22 @@
-from typing import Any  # , Literal
+from typing import Any, Literal
 
 
 def primeros_ejercicios() -> Any:
     """
     # Primeros ejercicios
 
-    En futuras clases vamos a aprender/repasar la syntaxis útilizada en este archivo,
+    En futuras clases vamos a aprender/repasar la sintaxis utilizada en este archivo,
     por ahora, vamos a concentrarnos en la resolución de los ejercicios.
 
-    A cuntinuación se presentan una serie de ejercicios en forma de comentarios,
-    deberá escribir su respuesta entre el comentario de la sonsigna y la sentencia
+    A continuación se presentan una serie de ejercicios en forma de comentarios,
+    deberá escribir su respuesta entre el comentario de la consigna y la sentencia
     `# yield`.
 
     Además deberá "descomentar" la sentencia `yield`
 
     ejemplo:
         ```python
-        # X. Declare una variable `texto` y asignele el valor `Hola Mundo` de tipo
+        # X. Declare una variable `texto` y asígnele el valor `Hola Mundo` de tipo
         #    string.
         text = "Hola Mundo"
 
@@ -47,7 +47,7 @@ def primeros_ejercicios() -> Any:
     # yield b
 
     # 4. Declare una variable `c` anotada con el tipo decimal (de coma flotante)
-    #    y asignele una expresión que evalúe la suma de `a` y `b` y luego multiplique
+    #    y asígnele una expresión que evalúe la suma de `a` y `b` y luego multiplique
     #    esto por 3.14
 
     # yield c
@@ -58,7 +58,7 @@ def primeros_ejercicios() -> Any:
     # yield d
 
     # 6. Declare una variable `e` y asígnele el valor `Hola` concatenado con `Mundo`
-    #    separados por un espacio. Anotela con el tipo string literal `Hola Mundo`
+    #    separados por un espacio. Anótela con el tipo string literal `Hola Mundo`
     #    (Esto resultará en que la variable `e` solo podrá contener este string
     #    puntual).
     #    Nota: para este ejercicio necesitará descomentar la importación de `Literal`
